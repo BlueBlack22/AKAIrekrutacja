@@ -1,0 +1,247 @@
+/*
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    AKAI Frontend Task - CSS
+
+    Spróbuj zmodyfikować poniższy plik ze stylami tak, by upiększyć formularz na stronie.
+    Jako inspiracji możesz skorzystać z szablonu znajdującego się w pliku img/layout.png
+    Nie wymagamy, by wykonać identyczny layout. Liczy się kreatywność.
+
+    Przy wykonywaniu zadania można zmienić strukturę pliku index.html.
+    Pamiętaj, że w takim wypadku będzie trzeba zadbać o dostosowanie odpowiednich selektorów.
+
+    Jeśli korzystasz z preprocessorów takich jak Sass/Less, również możesz się tym pochwalić.
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/*
+Przeanalizuj składnię pliku .css.
+Przy stylowaniu na najpierw podajemy, co chcemy ostylować, a następnie jakie atrybuty chcemy zmienić.
+np. poniższy selektor (body) oznacza, że modyfikujemy kontent body w dokumencie html.
+Żeby mieć pewność o czym mowa, zajrzyj w plik index.html, i znajdź tag <body>.
+*/
+body {
+  background-image: url("../img/tlo.jpg");
+  background-size: cover;
+  /*
+  wszystko co znajduje się pomiędzy nawiasami klamrowymi, to nasze polecenia modyfikujące określony element dokumentu
+  Poniżej zmieniamy atrybut font-family, który jest odpowiedzialny za wyświetlaną na stronie czcionkę
+  Zastanów się, czy Comic Sans jest odpowiedni.
+  Jeśli nie, wybierz inną czcionkę i zmodyfikuj poniższy tekst.
+  */
+  font-family: "Poppins", sans-serif;
+
+}
+
+/*
+selektor gwiazdki oznacza, że odnosimy się do konkretnego 'id' w pliku html.
+w tym przypadku odnosimy się do id "task-frontend".
+Zobacz, co się kryje pod tym id w pliku index.html.
+*/
+
+#nagłówek {
+  margin: 2rem;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  animation-duration: 30s;
+  animation-name: anim;
+  animation-iteration-count: infinite; 
+}
+
+@keyframes anim {
+  0% {
+    color: rgb(233, 172, 154);
+  }
+  25% {
+    color: rgb(239, 141, 142);
+  }
+  50% {
+    color: rgb(225, 78, 94);
+  }
+  75% {
+    color: rgb(239, 141, 142);
+  }
+  100% {
+    color: rgb(233, 172, 154);
+  }    
+}
+
+#task-frontend {
+  /*
+  pomiędzy nawiasami klamrowymi ponownie możemy modyfikować atrybuty wybranego elementu.
+  Opiszę krótko, co dzieje się w poniższym przykładzie:
+  */
+
+  /*
+  border modyfikuje obramowanie elementu. Obramowanie zawiera w sobie trzy atrybuty: grubość, styl i kolor.
+  Można się do nich odnosić indywidualnie, albo do wszystkich na raz, tak jak jest to zrobione poniżej.
+  Spróbuj dostosować obramowanie tak, żeby lepiej się prezentowało. Oczywiście, jeśli uważasz, że obramowanie nie jest potrzebne,
+  możesz zrezygnować z modyfikacji tego atrybutu. Domyślnie elementy nie posiadają obramowania, więc wystarczy usunąć poniższą linię.
+  */
+  border: 4px solid black;
+
+  /*
+  max-width ustawia maksymalną szerokość dla wybranego elementu. Oznacza to, że element osiągnie co najwyżej taką szerokość.
+  Natomiast jeśli nie będzie to możliwe (okno będzie mniejsze), to element skurczy się wraz z tym oknem.
+  */
+	max-width: 450px;
+
+  /*
+  atrybut margin definiuje miejsce wolne poza obramowaniem elementu.
+  margin jest jednym ze składowych bardzo ważnego pojęcia w CSS, które nazywamy Box Model.
+  Zachęcam do poczytania więcej na ten temat, np. pod adresem:
+  https://www.w3schools.com/css/css_boxmodel.asp
+
+  W poniższym przypadku ustawiamy wartość margin na górze i dole równą 0, zaś po bokach 'auto' - co oznacza,
+  że wartości po lewej i prawej będą obliczone przez przeglądarkę podczas renderowania strony, tak, aby margin-left i margin-right
+  otrzymały taką samą wartość, co będzie skutowało tym, że element zostanie na stronie wycentrowany.
+  */
+  margin: 2rem auto;
+
+  /*
+  atrybut text-align definiuje horyzontalne umieszczenie (wyrównanie) tekstu.
+  Wartość center oznacza, że chcemy umieścić tekst na środku.
+  */
+	text-align: center;
+
+  /*
+  background-color definiuje kolor tła w elemencie.
+  CSS zawiera prefediniowane wartości takie jak white, red, black, etc, ale można również tworzyć własne
+  poprzez podanie odpowiedniej wartości rgba
+  */
+  background-color: rgb(255, 167, 8);
+
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+  /*
+  zamykająca klamra oznacza, że kończymy modyfikować atrybuty danego elementu
+  */
+}
+
+
+/*
+jeśli widzisz dwa elementy (A, B) oddzielone spacją, oznacza to, że modyfikujemy wszystkie elementy B, które zawierają się w A.
+W poniższym przypadku modyfikujemy wszystkie elementy z klasą "basic-title", które znajdują się w elemencie o id "task-frontend".
+*/
+#task-frontend .basic-title {
+  /*
+  atrybut 'color' definiuje kolor tekstu w elemencie.
+  Zastanów się, czy kolor czerwony jest odpowiedni.
+  Jeśli nie, zmodyfikuj poniższy tekst wedle własnego uznania.
+  */
+  color: black;
+}
+
+/*
+podobna sytuacja występuje poniżej. Wybieramy wszystkie elementy z klasą 'form-line' znajdujące się w elemencie o id 'task-frontend'.
+*/
+#task-frontend .form-line {
+  border: 1px solid blue;
+}
+
+
+/*
+znasz już sposób definiowania selektorów.
+Oczywiście nie przerobiliśmy jeszcze wszystkich. W związku z tym zachęcam Cię do zapoznania się z innymi selektorami, np. tutaj:
+https://www.w3schools.com/cssref/css_selectors.asp
+Chciałbym, byś przeanalizowała / przeanalizował poniższe style i zmodyfikować je według własnego uznania.
+*/
+
+#task-frontend form>label {
+  text-transform: uppercase;
+	margin: 10px auto 0 auto;
+}
+
+
+#task-frontend span {
+  display: block;
+  padding-bottom: 10px;
+}
+
+#task-frontend button {
+	color: black;
+  background-color: whitesmoke;
+  border-radius: 5px;
+	margin-top: 20px;
+  margin-bottom: 20px;
+	width: 200px;
+	height: 35px;
+	text-align: center;
+  font-family: "Poppins";
+  text-transform: uppercase;
+}
+
+.formatowanie input {
+  margin: 10px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  font-family: "Poppins";
+}
+
+.formatowanie {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.formatowanie i {
+  position: absolute;
+  top: 44px;
+  left: 355px;
+  visibility: hidden;
+}
+
+.formatowanie small {
+  position: absolute;
+  bottom: 10px;
+  left: 75px;
+  visibility: hidden;
+}
+
+.formatowanie.g input {
+  border-color: green;
+}
+
+.formatowanie.g i.fa-check-circle {
+  visibility: visible;
+  color: green;
+}
+
+.formatowanie.b input {
+  border-color: red;
+}
+
+.formatowanie.b i.fa-exclamation-circle {
+  visibility: visible;
+  color: red;
+}
+
+.formatowanie.b small {
+  visibility: visible;
+  color: red;
+}
+
+.formatowanie2 small {
+  color: red;
+  position: absolute;
+  bottom: 181px;
+  left: 820px;
+  visibility: hidden;
+}
+
+.formatowanie3 small {
+  color: green;
+  position: absolute;
+  bottom: 117px;
+  left: 866px;
+  visibility: hidden;
+}
